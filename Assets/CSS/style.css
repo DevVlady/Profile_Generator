@@ -1,0 +1,17 @@
+.jumbotron {
+    background-color: rgb(216, 36, 36);
+    color: white;
+}
+
+.card-header {
+    background-color: rgb(0, 0, 255);
+    color: white;
+}
+
+.card-body {
+    background-color: rgb(216, 36, 36);
+}
+
+body {
+    background-image: url('https://wallpapercave.com/wp/wp2757874.gif');
+}
