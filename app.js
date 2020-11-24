@@ -95,31 +95,31 @@ function appMenu() {
       // CREATE OBJECTS OF QUESTIONS FOR ENGINEER
       {
         type: "input",
-        name: "employeeName",
+        name: "engineerName",
         message: "What is your name?",
       },
       {
         type: "input",
-        name: "employeeId",
+        name: "engineerId",
         message: "What is your employee ID?",
       },
       {
         type: "input",
-        name: "emailAddress",
+        name: "engineerEmail",
         message: "What is your email address?", //Provide options folling @ symbol
       },
       {
         type: "input",
-        name: "username",
+        name: "engineerUsername",
         message: "What is your GitHub username?",
       },
     ]).then(answers => {
       // YOUR CODE HERE
       // 1. CREATE A VARIABLE TO STORE THE ENGINEER OBJECT INSTANTIATED WITH THE ENGINEER CLASS, PASSING ANSWERS PROPERTIES AS INPUT AURGUMENTS
       //    TO THE ENGINEER CLASS CONSTRUCTOR
-      const manager = new Manager(answers.managerName, answers.managerId, answers.managerEmail, answers.managerOfficeNumber);
+      const engineer = new Manager(answers.engineerName, answers.engineerId, answers.engineerEmail, answers.engineerUsername);
       // 2. ADD (PUSH) THE ENGINEER VARIABLE TO the teamMembers ARRAY
-      teamMembers.push(manager);
+      teamMembers.push(engineer);
       // 3. ADD (PUSH) THE ENGINERR ID TO THE idArray ARRAY
       idArray.push(answers.managerId);
 
