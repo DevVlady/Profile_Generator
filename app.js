@@ -64,12 +64,12 @@ function appMenu() {
         type: "input",
         name: "managerOfficeNumber",
         message: "What is your office telephone number?",
-        validate: answer => {
-          const pass = answer.math(/^\d{10}$/); //Allows number format
+        validate: managerOfficeNumber => {
+          const pass = /^\d{10}$/.test(managerOfficeNumber); //Allows 10 number format
           if (pass) {
             return true;
           } else {
-            console.log('Invalid. Please enter a valid phone number (10 digits)');
+            console.log('Invalid. Please enter a valid phone number (10 digits)!');
             return false;
           }
         }
@@ -130,8 +130,8 @@ function appMenu() {
         type: "input",
         name: "engineerId",
         message: "What is your employee ID?",
-        validate: answer => {
-          const pass = answer.math(/^[1-9]\d*$/);
+        validate: engineerId => {
+          const pass = /^[1-9]\d*$/.test(engineerId);
           if (pass) {
             return true;
           } else {
@@ -144,8 +144,8 @@ function appMenu() {
         type: "input",
         name: "engineerEmail",
         message: "What is your email address?",
-        validate: answer => {
-          const pass = answer.math(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(myForm.emailAddr.value));
+        validate: engineerEmail => {
+          const pass = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(engineerEmail);
           if (pass) {
             return true;
           } else {
@@ -158,8 +158,8 @@ function appMenu() {
         type: "input",
         name: "engineerUsername",
         message: "What is your GitHub username?",
-        validate: answer => {
-          const pass = answer.math(/\W/); //Allows letters, numbers and underscores
+        validate: engineerUsername => {
+          const pass = /\W/.test(engineerUsername); //Allows letters, numbers and underscores
           if (pass) {
             return true;
           } else {
