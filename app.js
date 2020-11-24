@@ -77,10 +77,28 @@ function appMenu() {
 ​
   function addEngineer() {
     inquirer.prompt([
-      //
       // YOUR CODE HERE
       // CREATE OBJECTS OF QUESTIONS FOR ENGINEER
-      //
+      {
+        type: "input",
+        name: "employeeName",
+        message: "What is your name?",
+      },
+      {
+        type: "input",
+        name: "employeeId",
+        message: "What is your employee ID?",
+      },
+      {
+        type: "input",
+        name: "emailAddress",
+        message: "What is your email address?", //Provide options folling @ symbol
+      },
+      {
+        type: "input",
+        name: "officeNumber",
+        message: "What is your office telephone number?",
+      },
     ]).then(answers => {
       //
       // YOUR CODE HERE
