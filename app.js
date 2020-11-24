@@ -36,8 +36,7 @@ function appMenu() {
         name: "managerId",
         message: "What is your employee ID?",
         validate: answer => {
-          //Starts a line, captures digits 1-9 and $ is end of string (the slashes open and close the line)
-          const pass = answer.math(/^[1-9]\d*$/);
+          const pass = answer.math(/^[1-9]\d*$/); //Allows numbers and letters and numbers
         }
       },
       {
@@ -53,9 +52,8 @@ function appMenu() {
         name: "managerOfficeNumber",
         message: "What is your office telephone number?",
         validate: answer => {
-          const pass = answer.math(/^\d{10}$/);
+          const pass = answer.math(/^\d{10}$/); //Allows number format
         }
-
       },
     ]).then(answers => {
       const manager = new Manager(answers.managerName, answers.managerId, answers.managerEmail, answers.managerOfficeNumber);
@@ -118,7 +116,7 @@ function appMenu() {
       {
         type: "input",
         name: "engineerEmail",
-        message: "What is your email address?", //Provide options folling @ symbol
+        message: "What is your email address?",
         validate: answer => {
           const pass = answer.math(/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
         }
@@ -130,13 +128,12 @@ function appMenu() {
         validate: answer => {
           const pass = answer.math(/\W/); //Allows letters, numbers and underscores
         }
-
       },
     ]).then(answers => {
       // YOUR CODE HERE
       // 1. CREATE A VARIABLE TO STORE THE ENGINEER OBJECT INSTANTIATED WITH THE ENGINEER CLASS, PASSING ANSWERS PROPERTIES AS INPUT AURGUMENTS
       //    TO THE ENGINEER CLASS CONSTRUCTOR
-      const engineer = new Manager(answers.engineerName, answers.engineerId, answers.engineerEmail, answers.engineerUsername);
+      const engineer = new Engineer(answers.engineerName, answers.engineerId, answers.engineerEmail, answers.engineerUsername);
       // 2. ADD (PUSH) THE ENGINEER VARIABLE TO the teamMembers ARRAY
       teamMembers.push(engineer);
       // 3. ADD (PUSH) THE ENGINERR ID TO THE idArray ARRAY
@@ -154,32 +151,49 @@ function appMenu() {
         type: "input",
         name: "internName",
         message: "What is your name?",
+        validate: answer => {
+          if (answer !== "") {
+            return true;
+          }
+          return "Please enter a valid input containing at least one character!"
+        }
       },
       {
         type: "input",
         name: "internId",
         message: "What is your employee ID?",
+        validate: answer => {
+          const pass = answer.math(/^[1-9]\d*$/);
+        }
       },
       {
         type: "input",
         name: "internEmail",
-        message: "What is your email address?", //Provide options folling @ symbol
+        message: "What is your email address?",
+        validate: answer => {
+          const pass = answer.math(/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
+        }
       },
       {
         type: "input",
         name: "internSchool",
         message: "What university did you attend?",
+        validate: answer => {
+          if (answer !== "") {
+            return true;
+          }
+          return "Please enter a valid input containing at least one character!"
+        }
       },
-
     ]).then(answers => {
       // YOUR CODE HERE
       // 1. CREATE A VARIABLE TO STORE THE ENGINEER OBJECT INSTANTIATED WITH THE ENGINEER CLASS, PASSING ANSWERS PROPERTIES AS INPUT AURGUMENTS
       //    TO THE ENGINEER CLASS CONSTRUCTOR
-      const engineer = new Manager(answers.internName, answers.internId, answers.internEmail, answers.internSchool);
+      const intern = new Intern(answers.internName, answers.internId, answers.internEmail, answers.internSchool);
       // 2. ADD (PUSH) THE ENGINEER VARIABLE TO the teamMembers ARRAY
-      teamMembers.push(engineer);
+      teamMembers.push(intern);
       // 3. ADD (PUSH) THE ENGINERR ID TO THE idArray ARRAY
-      idArray.push(answers.engineerId);
+      idArray.push(answers.internId);
 ​
       createTeam();
     });
