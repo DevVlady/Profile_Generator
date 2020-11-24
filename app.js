@@ -28,7 +28,7 @@ function appMenu() {
           if (answer !== "") {
             return true;
           }
-          return "Please a valid input containing at least one character!"
+          return "Please enter a valid input containing at least one character!"
         }
       },
       {
@@ -37,7 +37,7 @@ function appMenu() {
         message: "What is your employee ID?",
         validate: answer => {
           //Starts a line, captures digits 1-9 and $ is end of string (the slashes open and close the line)
-          const pass = answer.math(/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
+          const pass = answer.math(/^[1-9]\d*$/);
         }
       },
       {
@@ -45,14 +45,17 @@ function appMenu() {
         name: "managerEmail",
         message: "What is your email address?", //Provide options folling @ symbol
         validate: answer => {
-          //Starts a line, captures digits 1-9 and $ is end of string (the slashes open and close the line)
-          const pass = answer.math(/^[1-9]\d*$/);
+          const pass = answer.math(/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
         }
       },
       {
         type: "input",
         name: "managerOfficeNumber",
         message: "What is your office telephone number?",
+        validate: answer => {
+          const pass = answer.math(/^\d{10}$/);
+        }
+
       },
     ]).then(answers => {
       const manager = new Manager(answers.managerName, answers.managerId, answers.managerEmail, answers.managerOfficeNumber);
@@ -97,21 +100,37 @@ function appMenu() {
         type: "input",
         name: "engineerName",
         message: "What is your name?",
+        validate: answer => {
+          if (answer !== "") {
+            return true;
+          }
+          return "Please enter a valid input containing at least one character!"
+        }
       },
       {
         type: "input",
         name: "engineerId",
         message: "What is your employee ID?",
+        validate: answer => {
+          const pass = answer.math(/^[1-9]\d*$/);
+        }
       },
       {
         type: "input",
         name: "engineerEmail",
         message: "What is your email address?", //Provide options folling @ symbol
+        validate: answer => {
+          const pass = answer.math(/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
+        }
       },
       {
         type: "input",
         name: "engineerUsername",
         message: "What is your GitHub username?",
+        validate: answer => {
+          const pass = answer.math(/\W/); //Allows letters, numbers and underscores
+        }
+
       },
     ]).then(answers => {
       // YOUR CODE HERE
@@ -121,7 +140,7 @@ function appMenu() {
       // 2. ADD (PUSH) THE ENGINEER VARIABLE TO the teamMembers ARRAY
       teamMembers.push(engineer);
       // 3. ADD (PUSH) THE ENGINERR ID TO THE idArray ARRAY
-      idArray.push(answers.managerId);
+      idArray.push(answers.engineerId);
 
       createTeam();
     });
@@ -133,33 +152,34 @@ function appMenu() {
       // CREATE OBJECTS OF QUESTIONS FOR ENGINEER
       {
         type: "input",
-        name: "employeeName",
+        name: "internName",
         message: "What is your name?",
       },
       {
         type: "input",
-        name: "employeeId",
+        name: "internId",
         message: "What is your employee ID?",
       },
       {
         type: "input",
-        name: "emailAddress",
+        name: "internEmail",
         message: "What is your email address?", //Provide options folling @ symbol
       },
       {
         type: "input",
-        name: "university",
+        name: "internSchool",
         message: "What university did you attend?",
       },
 
     ]).then(answers => {
-      //
       // YOUR CODE HERE
-      // 1. CREATE A VARIABLE TO STORE THE INTERN OBJECT INSTANTIATED WITH THE INTERN CLASS, PASSING ANSWERS PROPERTIES AS INPUT AURGUMENTS
-      //    TO THE INTERN CLASS CONSTRUCTOR
-      // 2. ADD (PUSH) THE INTERN VARIABLE TO the teamMembers ARRAY
-      // 3. ADD (PUSH) THE INTERN ID TO THE idArray ARRAY
-      //
+      // 1. CREATE A VARIABLE TO STORE THE ENGINEER OBJECT INSTANTIATED WITH THE ENGINEER CLASS, PASSING ANSWERS PROPERTIES AS INPUT AURGUMENTS
+      //    TO THE ENGINEER CLASS CONSTRUCTOR
+      const engineer = new Manager(answers.internName, answers.internId, answers.internEmail, answers.internSchool);
+      // 2. ADD (PUSH) THE ENGINEER VARIABLE TO the teamMembers ARRAY
+      teamMembers.push(engineer);
+      // 3. ADD (PUSH) THE ENGINERR ID TO THE idArray ARRAY
+      idArray.push(answers.engineerId);
 ​
       createTeam();
     });
