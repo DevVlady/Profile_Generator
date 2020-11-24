@@ -96,8 +96,8 @@ function appMenu() {
       },
       {
         type: "input",
-        name: "officeNumber",
-        message: "What is your office telephone number?",
+        name: "username",
+        message: "What is your GitHub username?",
       },
     ]).then(answers => {
       //
@@ -114,10 +114,29 @@ function appMenu() {
 ​
   function addIntern() {
     inquirer.prompt([
-      //
       // YOUR CODE HERE
       // CREATE OBJECTS OF QUESTIONS FOR ENGINEER
-      //
+      {
+        type: "input",
+        name: "employeeName",
+        message: "What is your name?",
+      },
+      {
+        type: "input",
+        name: "employeeId",
+        message: "What is your employee ID?",
+      },
+      {
+        type: "input",
+        name: "emailAddress",
+        message: "What is your email address?", //Provide options folling @ symbol
+      },
+      {
+        type: "input",
+        name: "university",
+        message: "What university did you attend?",
+      },
+
     ]).then(answers => {
       //
       // YOUR CODE HERE
@@ -143,5 +162,4 @@ function appMenu() {
 ​
 }
 ​
-​
-appMenu();
+​appMenu();
