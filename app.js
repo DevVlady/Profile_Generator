@@ -4,17 +4,17 @@ const Intern = require("./lib/Intern");
 const inquirer = require("inquirer");
 const path = require("path");
 const fs = require("fs");
-​
+
 const OUTPUT_DIR = path.resolve(__dirname, "output")
 const outputPath = path.join(OUTPUT_DIR, "team.html");
-​
+
 const render = require("./lib/htmlRenderer");
-​
+
 const teamMembers = [];
 const idArray = [];
-​
+
 function appMenu() {
-​
+
   function createManager() {
     console.log("Please build your team");
     inquirer.prompt([
@@ -25,6 +25,7 @@ function appMenu() {
         name: "managerName",
         message: "What is your name?",
         validate: answer => {
+
           if (answer !== "") {
             return true;
           }
@@ -62,9 +63,9 @@ function appMenu() {
       createTeam();
     });
   }
-​
+
   function createTeam() {
-​
+
     inquirer.prompt([
       {
         type: "list",
@@ -77,19 +78,19 @@ function appMenu() {
         ]
       }
     ]).then(userChoice => {
-      switch(userChoice.memberChoice) {
-      case "Engineer":
-        addEngineer();
-        break;
-      case "Intern":
-        addIntern();
-        break;
-      default:
-        buildTeam();
+      switch (userChoice.memberChoice) {
+        case "Engineer":
+          addEngineer();
+          break;
+        case "Intern":
+          addIntern();
+          break;
+        default:
+          buildTeam();
       }
     });
   }
-​
+
   function addEngineer() {
     inquirer.prompt([
       // YOUR CODE HERE
@@ -101,8 +102,10 @@ function appMenu() {
         validate: answer => {
           if (answer !== "") {
             return true;
+          } else {
+            console.log("Please enter a valid input containing at least one character!");
+            return false;
           }
-          return "Please enter a valid input containing at least one character!"
         }
       },
       {
@@ -111,6 +114,12 @@ function appMenu() {
         message: "What is your employee ID?",
         validate: answer => {
           const pass = answer.math(/^[1-9]\d*$/);
+          if (pass) {
+            return true;
+          } else {
+            console.log('Invalid email. Please enter a valid email format.');
+            return false;
+          }
         }
       },
       {
@@ -142,7 +151,7 @@ function appMenu() {
       createTeam();
     });
   }
-​
+
   function addIntern() {
     inquirer.prompt([
       // YOUR CODE HERE
@@ -194,11 +203,11 @@ function appMenu() {
       teamMembers.push(intern);
       // 3. ADD (PUSH) THE ENGINERR ID TO THE idArray ARRAY
       idArray.push(answers.internId);
-​
+
       createTeam();
     });
   }
-​
+
   function buildTeam() {
     // Create the output directory if the output path doesn't exist
     if (!fs.existsSync(OUTPUT_DIR)) {
@@ -206,9 +215,9 @@ function appMenu() {
     }
     fs.writeFileSync(outputPath, render(teamMembers), "utf-8");
   }
-​
+
   createManager();
-​
+
 }
-​
-​appMenu();
+
+appMenu();
