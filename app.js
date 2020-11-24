@@ -37,8 +37,8 @@ function appMenu() {
         type: "input",
         name: "managerId",
         message: "What is your employee ID?",
-        validate: answer => {
-          const pass = answer.math(/^[1-9]\d*$/); //Allows numbers and letters and numbers
+        validate: managerId => {
+          const pass = /^[1-9]\d*$/.test(managerId); //Allows numbers and letters and numbers
           if (pass) {
             return true;
           } else {
@@ -51,8 +51,8 @@ function appMenu() {
         type: "input",
         name: "managerEmail",
         message: "What is your email address?",
-        validate: answer => {
-          const pass = answer.math(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(myForm.emailAddr.value));
+        validate: function(managerEmail) {
+          const pass = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(managerEmail);
           if (pass) {
             return true;
           } else {
