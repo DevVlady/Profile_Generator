@@ -149,7 +149,7 @@ function appMenu() {
           if (pass) {
             return true;
           } else {
-            console.log('Invalid email. Please enter a valid email address!.');
+            console.log('Invalid email. Please enter a valid email address!');
             return false;
           }
         }
@@ -193,8 +193,10 @@ function appMenu() {
         validate: answer => {
           if (answer !== "") {
             return true;
+          } else {
+            console.log('Please enter a valid input containing at least one character!');
+            return false;
           }
-          return "Please enter a valid input containing at least one character!"
         }
       },
       {
@@ -203,6 +205,12 @@ function appMenu() {
         message: "What is your employee ID?",
         validate: answer => {
           const pass = answer.math(/^[1-9]\d*$/);
+          if (pass) {
+            return true;
+          } else {
+            console.log('Invalid. This filed cannot be empty!');
+            return false;
+          }
         }
       },
       {
@@ -211,6 +219,12 @@ function appMenu() {
         message: "What is your email address?",
         validate: answer => {
           const pass = answer.math(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(myForm.emailAddr.value));
+          if (pass) {
+            return true;
+          } else {
+            console.log('Invalid email. Please enter a valid email address!');
+            return false;
+          }
         }
       },
       {
@@ -220,8 +234,10 @@ function appMenu() {
         validate: answer => {
           if (answer !== "") {
             return true;
+          } else {
+              console.log('Please enter a valid input containing at least one character!');
+              return false;
           }
-          return "Please enter a valid input containing at least one character!"
         }
       },
     ]).then(answers => {
