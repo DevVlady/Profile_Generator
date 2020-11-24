@@ -50,9 +50,14 @@ function appMenu() {
       {
         type: "input",
         name: "managerEmail",
-        message: "What is your email address?", //Provide options folling @ symbol
+        message: "What is your email address?",
         validate: answer => {
           const pass = answer.math(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(myForm.emailAddr.value));
+          if (pass) {
+            return true;
+          } else {
+            console.log('Invalid email. Please enter a valid email address!.')
+          }
         }
       },
       {
@@ -61,6 +66,12 @@ function appMenu() {
         message: "What is your office telephone number?",
         validate: answer => {
           const pass = answer.math(/^\d{10}$/); //Allows number format
+          if (pass) {
+            return true;
+          } else {
+            console.log('Invalid. Please enter a valid phone number (10 digits)');
+            return false;
+          }
         }
       },
     ]).then(answers => {
@@ -124,7 +135,7 @@ function appMenu() {
           if (pass) {
             return true;
           } else {
-            console.log('Invalid email. Please enter a valid email format.');
+            console.log('Invalid. This filed cannot be empty!');
             return false;
           }
         }
@@ -135,6 +146,12 @@ function appMenu() {
         message: "What is your email address?",
         validate: answer => {
           const pass = answer.math(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(myForm.emailAddr.value));
+          if (pass) {
+            return true;
+          } else {
+            console.log('Invalid email. Please enter a valid email address!.');
+            return false;
+          }
         }
       },
       {
@@ -143,6 +160,12 @@ function appMenu() {
         message: "What is your GitHub username?",
         validate: answer => {
           const pass = answer.math(/\W/); //Allows letters, numbers and underscores
+          if (pass) {
+            return true;
+          } else {
+            console.log('Invalid, this field cannot be blank.');
+            return false;
+          }
         }
       },
     ]).then(answers => {
