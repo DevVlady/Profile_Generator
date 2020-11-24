@@ -25,11 +25,12 @@ function appMenu() {
         name: "managerName",
         message: "What is your name?",
         validate: answer => {
-
           if (answer !== "") {
             return true;
+          } else {
+            console.log("Please enter a valid input containing at least one character!")
+            return false;
           }
-          return "Please enter a valid input containing at least one character!"
         }
       },
       {
@@ -38,6 +39,12 @@ function appMenu() {
         message: "What is your employee ID?",
         validate: answer => {
           const pass = answer.math(/^[1-9]\d*$/); //Allows numbers and letters and numbers
+          if (pass) {
+            return true;
+          } else {
+            console.log('This field cannot be empty!')
+            return false;
+          }
         }
       },
       {
@@ -45,7 +52,7 @@ function appMenu() {
         name: "managerEmail",
         message: "What is your email address?", //Provide options folling @ symbol
         validate: answer => {
-          const pass = answer.math(/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
+          const pass = answer.math(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(myForm.emailAddr.value));
         }
       },
       {
@@ -127,7 +134,7 @@ function appMenu() {
         name: "engineerEmail",
         message: "What is your email address?",
         validate: answer => {
-          const pass = answer.math(/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
+          const pass = answer.math(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(myForm.emailAddr.value));
         }
       },
       {
@@ -180,7 +187,7 @@ function appMenu() {
         name: "internEmail",
         message: "What is your email address?",
         validate: answer => {
-          const pass = answer.math(/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
+          const pass = answer.math(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(myForm.emailAddr.value));
         }
       },
       {
