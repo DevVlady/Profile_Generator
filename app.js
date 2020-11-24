@@ -28,7 +28,7 @@ function appMenu() {
           if (answer !== "") {
             return true;
           } else {
-            console.log("Please enter a valid input containing at least one character!")
+            console.log(" Invalid. This field cannot be blank.")
             return false;
           }
         }
@@ -42,7 +42,7 @@ function appMenu() {
           if (pass) {
             return true;
           } else {
-            console.log('This field cannot be empty!')
+            console.log(' Invalid input. Please enter a valid employee ID.')
             return false;
           }
         }
@@ -56,7 +56,7 @@ function appMenu() {
           if (pass) {
             return true;
           } else {
-            console.log('Invalid email. Please enter a valid email address!.')
+            console.log(' Invalid email address. Please enter a valid email address!')
           }
         }
       },
@@ -69,7 +69,7 @@ function appMenu() {
           if (pass) {
             return true;
           } else {
-            console.log('Invalid. Please enter a valid phone number (10 digits)!');
+            console.log(' Invalid input. Please enter a valid phone number (10 digits)!');
             return false;
           }
         }
@@ -159,7 +159,7 @@ function appMenu() {
         name: "engineerUsername",
         message: "What is your GitHub username?",
         validate: engineerUsername => {
-          const pass = /\W/.test(engineerUsername); //Allows letters, numbers and underscores
+          const pass = /^[1-9]\d*$/.test(engineerUsername); //Allows letters, numbers and underscores
           if (pass) {
             return true;
           } else {
@@ -203,8 +203,8 @@ function appMenu() {
         type: "input",
         name: "internId",
         message: "What is your employee ID?",
-        validate: answer => {
-          const pass = answer.math(/^[1-9]\d*$/);
+        validate: internId => {
+          const pass = /^[1-9]\d*$/.test(internId);
           if (pass) {
             return true;
           } else {
@@ -217,8 +217,8 @@ function appMenu() {
         type: "input",
         name: "internEmail",
         message: "What is your email address?",
-        validate: answer => {
-          const pass = answer.math(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(myForm.emailAddr.value));
+        validate: internEmail => {
+          const pass = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(internEmail);
           if (pass) {
             return true;
           } else {
