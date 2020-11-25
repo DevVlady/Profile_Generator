@@ -29,7 +29,7 @@ function appMenu() {
           if (pass) {
             return true;
           } else {
-            console.log(" Invalid characters. Please try again using upper or lower case letters only!.")
+            console.log(" Invalid characters. Please try again using upper or lower case letters only!")
             return false;
           }
         }
@@ -123,7 +123,7 @@ function appMenu() {
           if (pass) {
             return true;
           } else {
-            console.log(" Invalid characters. Please try again using upper or lower case letters only!.")
+            console.log(" Invalid characters. Please try again using upper or lower case letters only!")
             return false;
           }
         }
