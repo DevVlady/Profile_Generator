@@ -37,7 +37,7 @@ This project requires an installation of 'node.js' and 'node inquerier' which ca
 
 ## Usage
 
-To create a successful README file you will need to run 'node app.js' in your terminal.
+To create a team profile template you will need to run 'node app.js' in your terminal and answer the prompts like example below.
 
 ![image](https://user-images.githubusercontent.com/71519918/100175459-0a6ec080-2e94-11eb-9c95-c9d51d2a88ab.png)
 
