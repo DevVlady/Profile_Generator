@@ -65,7 +65,7 @@ function appMenu() {
         name: "managerOfficeNumber",
         message: "What is your office telephone number?",
         validate: managerOfficeNumber => {
-          const pass = /^\d{10}$/.test(managerOfficeNumber); //Allows 10 number format
+          const pass = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/.test(managerOfficeNumber); //Allows 10 number format
           if (pass) {
             return true;
           } else {
@@ -159,7 +159,7 @@ function appMenu() {
         name: "engineerUsername",
         message: "What is your GitHub username?",
         validate: engineerUsername => {
-          const pass = /^[1-9]\d*$/.test(engineerUsername); //Allows letters, numbers and underscores
+          const pass = /^[0-9a-zA-Z]+$/.test(engineerUsername); //Allows letters, numbers and underscores
           if (pass) {
             return true;
           } else {
