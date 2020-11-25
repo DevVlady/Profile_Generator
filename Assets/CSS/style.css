@@ -17,8 +17,6 @@ body {
 }
 
 .card {
-    /* justify-content: space-around;
-    flex: 2; */
     width: 400px;
     height: 350px;
     margin: 35px;
