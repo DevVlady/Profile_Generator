@@ -24,11 +24,12 @@ function appMenu() {
         type: "input",
         name: "managerName",
         message: "What is your name?",
-        validate: answer => {
-          if (answer !== "") {
+        validate: managerName => {
+          const pass = /^[A-Za-z]+$/.test(managerName);
+          if (pass) {
             return true;
           } else {
-            console.log(" Invalid. This field cannot be blank.")
+            console.log(" Invalid characters. Please try again using upper or lower case letters only!.")
             return false;
           }
         }
@@ -117,11 +118,12 @@ function appMenu() {
         type: "input",
         name: "engineerName",
         message: "What is your name?",
-        validate: answer => {
-          if (answer !== "") {
+        validate: engineerName => {
+          const pass = /^[A-Za-z]+$/.test(engineerName);
+          if (pass) {
             return true;
           } else {
-            console.log("Please enter a valid input containing at least one character!");
+            console.log(" Invalid characters. Please try again using upper or lower case letters only!.")
             return false;
           }
         }
@@ -190,11 +192,12 @@ function appMenu() {
         type: "input",
         name: "internName",
         message: "What is your name?",
-        validate: answer => {
-          if (answer !== "") {
+        validate: internName => {
+          const pass = /^[A-Za-z]+$/.test(internName);
+          if (pass) {
             return true;
           } else {
-            console.log('Please enter a valid input containing at least one character!');
+            console.log(" Invalid characters. Please try again using upper or lower case letters only!.")
             return false;
           }
         }
