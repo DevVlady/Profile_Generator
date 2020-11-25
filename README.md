@@ -5,6 +5,10 @@
 # Description
 Building your team template where you can access all your teams info at your fingertips, just got easier. Answer the questions prompted successfully and a wonderful page with all your team is generated with the click of a button. To answer the questions you will need to obtain the following information about your employees you'd like to add; name, role, email address, phone number, and GitHub username.
 
+## Deployed Link
+
+Link: https://vlady14.github.io/Profile_Generator/
+
 ## Table of Contents
 
 * [License](#license)
