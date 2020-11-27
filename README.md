@@ -29,7 +29,9 @@ This project is licensed under the MIT license.
 
 ## Video
 
-Video Demonstration: https://drive.google.com/file/d/1jDKQ5yd9xZG6NooFr_4Uy_u0tBR7C6mC/view
+Video Demonstration:
+* Link 1: https://drive.google.com/file/d/1jDKQ5yd9xZG6NooFr_4Uy_u0tBR7C6mC/view
+* Link 2: https://drive.google.com/file/d/1OrJ475k5GJ_WnCbhtnG39SLwT7kVx9E_/view
 
 ## Installation
 
