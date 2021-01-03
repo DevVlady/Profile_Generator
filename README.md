@@ -2,60 +2,71 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-# Description
+## Description
+
 Building your team template where you can access all your teams info at your fingertips, just got easier. Answer the questions prompted successfully and a wonderful page with all your team is generated with the click of a button. To answer the questions you will need to obtain the following information about your employees you'd like to add; name, role, email address, phone number, and GitHub username.
 
 ## Table of Contents
 
 * [License](#license)
 
-* [Video](#video)
+* [Image](#image)
+
+* [Demo](#demo)
 
 * [Installation](#installation)
 
 * [Usage](#usage)
 
-* [Preview](#preview)
-
 * [Contributing](#contributing)
 
 * [Tests](#tests)
+
+* [Technologies](#technologies)
 
 * [Questions](#questions)
 
 ## License
 
-This project is licensed under the MIT license.
+This project is licensed under the MIT license
 
-## Video
+## Image
 
-Video Demonstration:
-* Link 1: https://drive.google.com/file/d/1jDKQ5yd9xZG6NooFr_4Uy_u0tBR7C6mC/view
-* Link 2: https://drive.google.com/file/d/1OrJ475k5GJ_WnCbhtnG39SLwT7kVx9E_/view
+![image](https://user-images.githubusercontent.com/71519918/103469263-3fd6bb80-4d28-11eb-8672-d63e0406241b.png)
+
+![image](https://user-images.githubusercontent.com/71519918/103469342-f33fb000-4d28-11eb-92c4-bfa697c79845.png)
+
+## Demo
+
+Demo Link: https://drive.google.com/file/d/1jDKQ5yd9xZG6NooFr_4Uy_u0tBR7C6mC/view
+
+Demo Link: https://drive.google.com/file/d/1OrJ475k5GJ_WnCbhtnG39SLwT7kVx9E_/view
 
 ## Installation
 
-This project requires an installation of 'node.js' and 'node inquerier' which can be done by running the following command in your terminal "npm install."
+Run the following command "npm i" in your terminal to install any dependencies for this application
 
 ## Usage
 
-To create a team profile template you will need to run 'node app.js' in your terminal and answer the prompts like example below.
+Steps on how to properly use the team profile generator application are provided below.
 
-![image](https://user-images.githubusercontent.com/71519918/100175459-0a6ec080-2e94-11eb-9c95-c9d51d2a88ab.png)
-
-
-## Preview
-
-![image](https://user-images.githubusercontent.com/71519918/100175692-810bbe00-2e94-11eb-9045-6bd2c4a75815.png)
+* FIRST start by launching the application and type the following command "node app.js" in your terminal.
+* THEN answer all the questions you are prompted in your terminal.
+* WHEN last question is answered and you click enter, you will have a generated document with the inputs taken from the user.
 
 ## Contributing
 
-To make contributions, use the fork method to create your own version of the repo.
+This project/repo has been contributed by Vladimir Dimitrov. Anyone can contribute to this project/repo by either reaching out to the owner or using the fork method through GitHub
 
 ## Tests
 
-To run tests, run the following command "npm test" into your terminal.
+Run the following command "npm test" in your terminal to run tests for this application
+
+## Technologies
+
+Technologies, applications, and programs used in this project are HTML5, CSS3, JavaScript, Node.js, OOP, & GoogleDrive
 
 ## Questions
 
-If you have any questions about the repo, please open an issue or contact me directly at vladimir.s.dimitrov14@gmail.com. You can find more of my work at Vlady14 (https://github.com/Vlady14).
+If you have any questions about the project/repo, please open an issue or contact me directly at <vladimir.s.dimitrov14@gmail.com>.
+You can find more of my work at Vlady14 (https://github.com/Vlady14).
