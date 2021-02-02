@@ -12,15 +12,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Vlady14/Profile_Generator.git"
+    "url": "git+https://github.com/DevVlady/Profile_Generator.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Vlady14/Profile_Generator/issues"
+    "url": "https://github.com/DevVlady/Profile_Generator/issues"
   },
-  "homepage": "https://github.com/Vlady14/Profile_Generator#readme",
+  "homepage": "https://github.com/DevVlady/Profile_Generator#readme",
   "dependencies": {
     "inquirer": "^7.3.3",
     "jest": "^26.6.3"
